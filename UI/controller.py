@@ -13,8 +13,13 @@ class Controller:
         self.fillIDMap()
 
     def handleWorstCase(self, e):
-        # TO FILL
-        pass
+        id = ""
+        for nerc in self._model.listNerc:
+            if nerc._value == self._view._ddNerc.value:
+                id = nerc.id
+                break
+        self.worst_case = self._model.worstCase(Nerc(id,self._view._ddNerc.value),
+                                                self._view._txtYears.value, self._view._txtHours.value)
 
     def fillDD(self):
         nercList = self._model.listNerc

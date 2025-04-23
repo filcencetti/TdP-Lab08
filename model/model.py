@@ -8,13 +8,15 @@ class Model:
         self._listEvents = None
         self.loadNerc()
 
-
-
     def worstCase(self, nerc, maxY, maxH):
-        # TO FILL
+        self._listNerc = self.loadEvents(nerc)
+
         pass
+
     def ricorsione(self, parziale, maxY, maxH, pos):
-        # TO FILL
+
+
+
         pass
 
     def loadEvents(self, nerc):

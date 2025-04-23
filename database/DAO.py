@@ -14,7 +14,8 @@ class DAO():
         result = []
 
         cursor = conn.cursor(dictionary=True)
-        query = """ ADD YOUR QUERY """
+        query = """ select *
+                from poweroutages.nerc"""
 
         cursor.execute(query)
 
@@ -32,9 +33,12 @@ class DAO():
         result = []
 
         cursor = conn.cursor(dictionary=True)
-        query = """ ADD YOUR QUERY """
+        query = """ select * 
+                    from poweroutages.poweroutages 
+                    where nerc_id = '%s'
+                """
 
-        cursor.execute(query, (nerc.id,))
+        cursor.execute(query, (nerc._id,))
 
         for row in cursor:
             result.append(
